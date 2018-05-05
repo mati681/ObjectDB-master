@@ -14,7 +14,7 @@ public class Wyposazenie {
         this.RodzajTapicerki =rodzajTapicerki;
         this.RodzajReflektorow = rodzajReflektorow;
     }
-    
+
     public int getIdWyposazenia() {
         return IdWyposazenia;
     }
