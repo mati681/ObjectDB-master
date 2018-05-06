@@ -32,5 +32,10 @@ public class Pracownik extends Osoba {
     public int getStazPracy() {
         return StazPracy;
     }
+
+    void getSumaPieniedzy()
+    {
+
+    };
 }
 

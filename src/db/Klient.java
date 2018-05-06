@@ -44,4 +44,9 @@ public class Klient extends Osoba {
     public String getEmail() {
         return Email;
     }
+
+    void getSumaPieniedzy()
+    {
+
+    };
 }
