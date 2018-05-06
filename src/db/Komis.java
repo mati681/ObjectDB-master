@@ -1,24 +1,35 @@
 package db;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Komis {
     // Persistent Fields
-    private int idKomisu;
+    @Id
+    @GeneratedValue
+    private int IdKomisu;
     private String Nazwa;
     private String Adres;
 
+
+    @ManyToOne
+    Klient klient;
+    @ManyToOne
+    Samochod samochod;
+
     public Komis(int idKomisu, String nazwa, String adres ) {
 
-        this.idKomisu = idKomisu;
+        this.IdKomisu = idKomisu;
         this.Nazwa = nazwa;
         this.Adres = adres;
 
     }
 
     public int getIdKomisu() {
-        return idKomisu;
+        return IdKomisu;
     }
 
     public String getNazwa() {

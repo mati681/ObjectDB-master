@@ -1,14 +1,13 @@
 package db;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class Wyposazenie {
     // Persistent Fields
+    @Id
+    @GeneratedValue
     private int IdWyposazenia;
     private String Klimatyzacja; //Wartosci: brak, manualna, automatyczna
     private String RodzajTapicerki;
@@ -16,9 +15,8 @@ public class Wyposazenie {
 
 
 
-   @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="Wyposazenie")
-
-    public List<Samochod> ListaWyposazeniaSamochodu;
+    @OneToMany(mappedBy = "Wyposazenie")
+    private List<Samochod> samochod;
 
     public Wyposazenie(int idWyposazenia, String klimatyzacja, String rodzajTapicerki, String rodzajReflektorow ) {
 

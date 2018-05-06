@@ -6,6 +6,8 @@ import java.util.List;
 @Entity
 public class Samochod {
     // Persistent Fields
+    @Id@GeneratedValue
+    private int IdSamochodu;
     private int NrVin;
     private String Marka;
     private String Model;
@@ -13,11 +15,20 @@ public class Samochod {
     private int Przebieg;
     private String KrajPochodzenia;
 
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="nrVin")
+    @ManyToOne
+    Silnik silnik;
 
-    @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="Samochod")
-    public List<Samochod> samochodList;
+    @ManyToOne
+    Wyposazenie wyposazenie;
+    @ManyToOne
+    Klient klient;
+
+    @OneToMany(mappedBy = "Samochod")
+    private List<Pracownik> pracownik;
+
+    @OneToMany(mappedBy = "Samochod")
+    private List<Komis> komis;
+
 
     public Samochod(int nrVin, String marka, String model, int rocznik, int przebieg, String krajPochodzenia ) {
 
