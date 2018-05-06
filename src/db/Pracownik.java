@@ -10,9 +10,9 @@ public class Pracownik extends Osoba {
     private String Stanowisko;
     private int StazPracy;
 
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name = "nrVin")
-    public Samochod SamochodzPracownikiem;
+    @ManyToOne
+    Samochod samochod;
+
 
     public Pracownik(int idOsoby, String imie, String nazwisko, int pesel, int idPracownika, String stanowisko, int stazPracy) {
         super(idOsoby, imie, nazwisko, pesel);
