@@ -1,10 +1,11 @@
 package db;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Wyposazenie {
+public class Wyposazenie implements Serializable {
     // Persistent Fields
     @Id
     @GeneratedValue
