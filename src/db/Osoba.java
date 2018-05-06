@@ -1,13 +1,19 @@
 package db;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Inheritance;
+
+import java.io.Serializable;
 
 import static javax.persistence.InheritanceType.JOINED;
 
 @Entity
 @Inheritance(strategy=JOINED)
-public class Osoba {
+public class Osoba implements Serializable {
+    @Id
+    @GeneratedValue
     // Persistent Fields
     private int idOsoby;
     private String Imie;

@@ -7,7 +7,6 @@ import javax.persistence.OneToMany;
 import java.util.List;
 
 
-
 @Entity
 public class Klient extends Osoba {
     // Persistent Fields

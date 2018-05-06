@@ -2,6 +2,7 @@ package db;
 
 import javax.persistence.*;
 
+
 @Entity
 public class Pracownik extends Osoba {
     // Persistent Fields
