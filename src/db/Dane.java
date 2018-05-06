@@ -1,14 +1,15 @@
 package db;
 
 import javax.persistence.EntityManager;
-import java.util.Random;
 
-public class dane {
+import javax.persistence.EntityManager;
+
+public class Dane {
 
     EntityManager em;
-    Random r=new Random();
+    //Random r=new Random();
 
-    public dane(EntityManager em) {
+    public Dane(EntityManager em) {
         this.em = em;
     }
 
