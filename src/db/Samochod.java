@@ -13,10 +13,11 @@ public class Samochod {
     private int Przebieg;
     private String KrajPochodzenia;
 
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="nrVin")
 
     @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="Samochod")
     public List<Samochod> samochodList;
-
 
     public Samochod(int nrVin, String marka, String model, int rocznik, int przebieg, String krajPochodzenia ) {
 

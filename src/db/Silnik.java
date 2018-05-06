@@ -1,6 +1,10 @@
 package db;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
 public class Silnik {
@@ -12,6 +16,9 @@ public class Silnik {
     private String RodzajWtrysku;
 
 
+    @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="Silnik")
+
+    public List<Samochod> ListaSilnikowSamochodow;
 
     public Silnik(int nrSilnika, String pojemnosc, String normaSpalin, String rodzajPaliwa, String rodzajWtrysku ) {
 
