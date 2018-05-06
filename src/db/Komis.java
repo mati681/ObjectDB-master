@@ -41,6 +41,11 @@ public class Komis implements Serializable {
         return Adres;
     }
 
-
+    public void setKlient(Klient klient) {
+        this.klient = klient;
+    }
+    public void setSamochod(Samochod samochod) {
+        this.samochod = samochod;
+    }
 
 }

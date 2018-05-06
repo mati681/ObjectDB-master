@@ -15,9 +15,11 @@ public class Klient extends Osoba {
     private int Telefon;
     private String Email;
 
-    @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="Klient")
+    @OneToMany(mappedBy = "Klient")
+    private List<Komis> komis;
 
-    public List<Samochod> ListaSamochodowKupionych;
+    @OneToMany(mappedBy = "Klient")
+    private List<Samochod> samochod;
 
     public Klient(int idOsoby, String imie, String nazwisko, int pesel, int idKlienta, String adres, int telefon, String email) {
         super(idOsoby, imie, nazwisko, pesel);
