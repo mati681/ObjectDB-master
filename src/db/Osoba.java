@@ -11,7 +11,7 @@ import static javax.persistence.InheritanceType.JOINED;
 
 @Entity
 @Inheritance(strategy=JOINED)
-public class Osoba implements Serializable {
+public abstract class Osoba implements Serializable {
     @Id
     @GeneratedValue
     // Persistent Fields
@@ -54,5 +54,7 @@ public class Osoba implements Serializable {
                 ", Pesel=" + Pesel +
                 '}';
     }
+
+    abstract void getSumaPieniedzy();
 }
 
