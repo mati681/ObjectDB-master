@@ -9,7 +9,7 @@ public class Silnik implements Serializable {
     // Persistent Fields
     @Id@GeneratedValue
     private int IdSilnika;
-    private int NumerSilnika;
+    private String NumerSilnika;
     private String Pojemnosc;
     private String NormaSpalin;
     private String RodzajPaliwa;
@@ -19,7 +19,7 @@ public class Silnik implements Serializable {
     @OneToMany(mappedBy = "Silnik")
     private List<Samochod> samochod;
 
-    public Silnik(int nrSilnika, String pojemnosc, String normaSpalin, String rodzajPaliwa, String rodzajWtrysku ) {
+    public Silnik(String nrSilnika, String pojemnosc, String normaSpalin, String rodzajPaliwa, String rodzajWtrysku ) {
 
         this.NumerSilnika = nrSilnika;
         this.Pojemnosc = pojemnosc;
@@ -29,7 +29,7 @@ public class Silnik implements Serializable {
 
     }
 
-    public void setNumerSilnika(int numerSilnika) {
+    public void setNumerSilnika(String numerSilnika) {
         NumerSilnika = numerSilnika;
     }
 
