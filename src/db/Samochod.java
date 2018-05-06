@@ -65,4 +65,14 @@ public class Samochod implements Serializable {
         return KrajPochodzenia;
     }
 
+    public void setKlient(Klient klient) {
+        this.klient = klient;
+    }
+    public void setWyposazenie(Wyposazenie wyposazenie) {
+        this.wyposazenie = wyposazenie;
+    }
+    public void setSilnik(Silnik silnik) {
+        this.silnik = silnik;
+    }
+
 }
