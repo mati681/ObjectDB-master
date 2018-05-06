@@ -1,5 +1,9 @@
 package db;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
 public class Samochod {
     // Persistent Fields
     private int NrVin;
@@ -8,6 +12,10 @@ public class Samochod {
     private int Rocznik;
     private int Przebieg;
     private String KrajPochodzenia;
+
+
+    @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="Samochod")
+    public List<Samochod> samochodList;
 
 
     public Samochod(int nrVin, String marka, String model, int rocznik, int przebieg, String krajPochodzenia ) {

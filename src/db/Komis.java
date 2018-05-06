@@ -1,5 +1,8 @@
 package db;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Komis {
     // Persistent Fields
     private int idKomisu;

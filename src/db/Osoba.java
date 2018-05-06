@@ -1,5 +1,12 @@
 package db;
 
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+
+import static javax.persistence.InheritanceType.JOINED;
+
+@Entity
+@Inheritance(strategy=JOINED)
 public class Osoba {
     // Persistent Fields
     private int idOsoby;

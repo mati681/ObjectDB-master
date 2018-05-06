@@ -1,5 +1,8 @@
 package db;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Silnik {
     // Persistent Fields
     private int NumerSilnika;
