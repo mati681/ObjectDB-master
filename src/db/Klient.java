@@ -21,7 +21,7 @@ public class Klient extends Osoba {
     @OneToMany(mappedBy = "Klient")
     private List<Samochod> samochod;
 
-    public Klient(int idOsoby, String imie, String nazwisko, int pesel, int idKlienta, String adres, int telefon, String email) {
+    public Klient(int idOsoby, String imie, String nazwisko, String pesel, int idKlienta, String adres, int telefon, String email) {
         super(idOsoby, imie, nazwisko, pesel);
         this.idKlienta = idKlienta;
         this.Adres = adres;

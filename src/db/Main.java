@@ -12,6 +12,23 @@ public class Main {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         // Close the database connection:
+
+        Dane d = new Dane(em);
+        d.setSilnik(20);
+        d.setWyposazenie(20);
+        d.setSamochod(20);
+        //d.setPracownik(20);
+        //d.setKlient(20);
+        //d.setKomis(20);
+
+        emf= Persistence.createEntityManagerFactory("db/komis.odb");
+        em=emf.createEntityManager();
+        em.getTransaction().begin();
+        //d=new Dane(em);
+        //d.relacje(20);
+        em.getTransaction().commit();
+
+
         em.close();
         emf.close();
     }
