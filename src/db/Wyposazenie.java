@@ -19,7 +19,7 @@ public class Wyposazenie implements Serializable {
     @OneToMany(mappedBy = "Wyposazenie")
     private List<Samochod> samochod;
 
-    public Wyposazenie(int idWyposazenia, String klimatyzacja, String rodzajTapicerki, String rodzajReflektorow ) {
+    public Wyposazenie(int idWyposazenia, String klimatyzacja, String rodzajTapicerki, String rodzajReflektorow, int i) {
 
         this.IdWyposazenia = idWyposazenia;
         this.Klimatyzacja =klimatyzacja;
@@ -27,7 +27,7 @@ public class Wyposazenie implements Serializable {
         this.RodzajReflektorow = rodzajReflektorow;
     }
 
-    public int getIdWyposazenia() {
+   public int getIdWyposazenia() {
         return IdWyposazenia;
     }
 

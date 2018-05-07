@@ -18,10 +18,10 @@ public abstract class Osoba implements Serializable {
     private int idOsoby;
     private String Imie;
     private String Nazwisko;
-    private int Pesel;
+    private String Pesel;
 
     // Constructors
-    Osoba(int idOsoby, String imie, String nazwisko, int pesel) {
+    Osoba(int idOsoby, String imie, String nazwisko, String  pesel) {
         this.idOsoby = idOsoby;
         this.Imie = imie;
         this.Nazwisko = nazwisko;
@@ -40,7 +40,7 @@ public abstract class Osoba implements Serializable {
         return this.Nazwisko;
     }
 
-    public int getPesel() {
+    public String getPesel() {
         return this.Pesel;
     }
 

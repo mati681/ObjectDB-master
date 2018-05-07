@@ -4,7 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 public class Komis implements Serializable {
@@ -16,10 +19,15 @@ public class Komis implements Serializable {
     private String Adres;
 
 
-    @ManyToOne
-    Klient klient;
-    @ManyToOne
-    Samochod samochod;
+    @OneToMany(mappedBy = "Komis")
+    private List<Samochod> samochod;
+   
+    
+    @OneToMany(mappedBy = "Komis")
+    private List<Klient> klient;
+    
+    @OneToMany(mappedBy = "Komis")
+    private List<Pracownik> pracownik;
 
     public Komis(int idKomisu, String nazwa, String adres ) {
 
@@ -41,11 +49,5 @@ public class Komis implements Serializable {
         return Adres;
     }
 
-    public void setKlient(Klient klient) {
-        this.klient = klient;
-    }
-    public void setSamochod(Samochod samochod) {
-        this.samochod = samochod;
-    }
-
+    
 }

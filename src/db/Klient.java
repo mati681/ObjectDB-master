@@ -3,6 +3,7 @@ package db;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.util.List;
 
@@ -15,13 +16,11 @@ public class Klient extends Osoba {
     private int Telefon;
     private String Email;
 
-    @OneToMany(mappedBy = "Klient")
-    private List<Komis> komis;
+    @ManyToOne
+    Komis komis;
 
-    @OneToMany(mappedBy = "Klient")
-    private List<Samochod> samochod;
-
-    public Klient(int idOsoby, String imie, String nazwisko, int pesel, int idKlienta, String adres, int telefon, String email) {
+    
+    public Klient(int idOsoby, String imie, String nazwisko, String pesel, int idKlienta, String adres, int telefon, String email) {
         super(idOsoby, imie, nazwisko, pesel);
         this.idKlienta = idKlienta;
         this.Adres = adres;
@@ -44,7 +43,7 @@ public class Klient extends Osoba {
     public String getEmail() {
         return Email;
     }
-
+    
     void getSumaPieniedzy()
     {
 

@@ -9,11 +9,11 @@ public class Samochod implements Serializable {
     // Persistent Fields
     @Id@GeneratedValue
     private int IdSamochodu;
-    private int NrVin;
+    private String NrVin;
     private String Marka;
     private String Model;
-    private int Rocznik;
-    private int Przebieg;
+    private String Rocznik;
+    private String Przebieg;
     private String KrajPochodzenia;
 
     @ManyToOne
@@ -21,18 +21,15 @@ public class Samochod implements Serializable {
 
     @ManyToOne
     Wyposazenie wyposazenie;
+    
     @ManyToOne
-    Klient klient;
+    Komis komis;
+    
+   
 
-    @OneToMany(mappedBy = "Samochod")
-    private List<Pracownik> pracownik;
+    public Samochod(int idSamochodu, String nrVin, String marka, String model, String rocznik, String przebieg, String krajPochodzenia ) {
 
-    @OneToMany(mappedBy = "Samochod")
-    private List<Komis> komis;
-
-
-    public Samochod(int nrVin, String marka, String model, int rocznik, int przebieg, String krajPochodzenia ) {
-
+        this.IdSamochodu = idSamochodu;
         this.NrVin = nrVin;
         this.Marka = marka;
         this.Model = model;
@@ -41,7 +38,11 @@ public class Samochod implements Serializable {
         this.KrajPochodzenia = krajPochodzenia;
     }
 
-    public int getNrVin() {
+    public int getIdSamochodu() {
+        return IdSamochodu;
+    }
+
+    public String getNrVin() {
         return NrVin;
     }
 
@@ -53,11 +54,11 @@ public class Samochod implements Serializable {
         return Model;
     }
 
-    public int getRocznik() {
+    public String getRocznik() {
         return Rocznik;
     }
 
-    public int getPrzebieg() {
+    public String getPrzebieg() {
         return Przebieg;
     }
 
@@ -65,14 +66,14 @@ public class Samochod implements Serializable {
         return KrajPochodzenia;
     }
 
-    public void setKlient(Klient klient) {
-        this.klient = klient;
-    }
     public void setWyposazenie(Wyposazenie wyposazenie) {
         this.wyposazenie = wyposazenie;
     }
     public void setSilnik(Silnik silnik) {
         this.silnik = silnik;
+    }
+    public void setKomis(Komis komis) {
+        this.komis = komis;
     }
 
 }
